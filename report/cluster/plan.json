@@ -1,0 +1,269 @@
+{
+  "profile": "cluster",
+  "config": {
+    "profile": "cluster",
+    "description": "\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u0440\u0430\u0437\u043c\u0435\u0440\u044b \u0437\u0430\u0434\u0430\u043d\u0438\u044f; \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f \u0442\u0440\u0435\u0431\u0443\u044e\u0442 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430",
+    "processes": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "cases": [
+      {
+        "name": "A",
+        "M": 20000000,
+        "N": 200,
+        "seed": 101
+      },
+      {
+        "name": "B",
+        "M": 8000000,
+        "N": 500,
+        "seed": 102
+      },
+      {
+        "name": "C",
+        "M": 2000000,
+        "N": 1000,
+        "seed": 103
+      }
+    ],
+    "weak": {
+      "rows_per_rank": 200000,
+      "N": 200,
+      "iterations": 20,
+      "seed": 201
+    },
+    "weak_processes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "repeats": 5,
+    "warmup": 1
+  },
+  "jobs": [
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 1,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 2,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 4,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 8,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 16,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 32,
+      "scaling": "strong"
+    },
+    {
+      "name": "A",
+      "M": 20000000,
+      "N": 200,
+      "seed": 101,
+      "processes": 64,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 1,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 2,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 4,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 8,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 16,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 32,
+      "scaling": "strong"
+    },
+    {
+      "name": "B",
+      "M": 8000000,
+      "N": 500,
+      "seed": 102,
+      "processes": 64,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 1,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 2,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 4,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 8,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 16,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 32,
+      "scaling": "strong"
+    },
+    {
+      "name": "C",
+      "M": 2000000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 64,
+      "scaling": "strong"
+    },
+    {
+      "name": "weak",
+      "M": 200000,
+      "N": 200,
+      "seed": 201,
+      "processes": 1,
+      "scaling": "weak",
+      "fixed_iters": 20
+    },
+    {
+      "name": "weak",
+      "M": 400000,
+      "N": 200,
+      "seed": 201,
+      "processes": 2,
+      "scaling": "weak",
+      "fixed_iters": 20
+    },
+    {
+      "name": "weak",
+      "M": 800000,
+      "N": 200,
+      "seed": 201,
+      "processes": 4,
+      "scaling": "weak",
+      "fixed_iters": 20
+    },
+    {
+      "name": "weak",
+      "M": 1600000,
+      "N": 200,
+      "seed": 201,
+      "processes": 8,
+      "scaling": "weak",
+      "fixed_iters": 20
+    },
+    {
+      "name": "weak",
+      "M": 3200000,
+      "N": 200,
+      "seed": 201,
+      "processes": 16,
+      "scaling": "weak",
+      "fixed_iters": 20
+    }
+  ],
+  "execution_status": "not_run",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "logical_cpus": 12
+}

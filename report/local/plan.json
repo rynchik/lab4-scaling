@@ -1,0 +1,232 @@
+{
+  "profile": "local",
+  "config": {
+    "profile": "local",
+    "description": "M \u0443\u043c\u0435\u043d\u044c\u0448\u0435\u043d\u043e \u0432 1000 \u0440\u0430\u0437; \u044d\u0442\u043e \u043d\u0435 \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0435 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043d\u044b\u0435 \u043d\u0430\u0431\u043e\u0440\u044b",
+    "processes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "cases": [
+      {
+        "name": "A",
+        "M": 20000,
+        "N": 200,
+        "seed": 101
+      },
+      {
+        "name": "B",
+        "M": 8000,
+        "N": 500,
+        "seed": 102
+      },
+      {
+        "name": "C",
+        "M": 2000,
+        "N": 1000,
+        "seed": 103
+      }
+    ],
+    "weak": {
+      "rows_per_rank": 2000,
+      "N": 200,
+      "iterations": 20,
+      "seed": 201
+    },
+    "repeats": 3,
+    "warmup": 1
+  },
+  "jobs": [
+    {
+      "name": "A",
+      "M": 20000,
+      "N": 200,
+      "seed": 101,
+      "processes": 1,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "A",
+      "M": 20000,
+      "N": 200,
+      "seed": 101,
+      "processes": 2,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "A",
+      "M": 20000,
+      "N": 200,
+      "seed": 101,
+      "processes": 4,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "A",
+      "M": 20000,
+      "N": 200,
+      "seed": 101,
+      "processes": 8,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "A",
+      "M": 20000,
+      "N": 200,
+      "seed": 101,
+      "processes": 16,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "B",
+      "M": 8000,
+      "N": 500,
+      "seed": 102,
+      "processes": 1,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "B",
+      "M": 8000,
+      "N": 500,
+      "seed": 102,
+      "processes": 2,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "B",
+      "M": 8000,
+      "N": 500,
+      "seed": 102,
+      "processes": 4,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "B",
+      "M": 8000,
+      "N": 500,
+      "seed": 102,
+      "processes": 8,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "B",
+      "M": 8000,
+      "N": 500,
+      "seed": 102,
+      "processes": 16,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "C",
+      "M": 2000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 1,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "C",
+      "M": 2000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 2,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "C",
+      "M": 2000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 4,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "C",
+      "M": 2000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 8,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "C",
+      "M": 2000,
+      "N": 1000,
+      "seed": 103,
+      "processes": 16,
+      "scaling": "strong",
+      "status": "completed"
+    },
+    {
+      "name": "weak",
+      "M": 2000,
+      "N": 200,
+      "seed": 201,
+      "processes": 1,
+      "scaling": "weak",
+      "fixed_iters": 20,
+      "status": "completed"
+    },
+    {
+      "name": "weak",
+      "M": 4000,
+      "N": 200,
+      "seed": 201,
+      "processes": 2,
+      "scaling": "weak",
+      "fixed_iters": 20,
+      "status": "completed"
+    },
+    {
+      "name": "weak",
+      "M": 8000,
+      "N": 200,
+      "seed": 201,
+      "processes": 4,
+      "scaling": "weak",
+      "fixed_iters": 20,
+      "status": "completed"
+    },
+    {
+      "name": "weak",
+      "M": 16000,
+      "N": 200,
+      "seed": 201,
+      "processes": 8,
+      "scaling": "weak",
+      "fixed_iters": 20,
+      "status": "completed"
+    },
+    {
+      "name": "weak",
+      "M": 32000,
+      "N": 200,
+      "seed": 201,
+      "processes": 16,
+      "scaling": "weak",
+      "fixed_iters": 20,
+      "status": "completed"
+    }
+  ],
+  "execution_status": "completed",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "logical_cpus": 12
+}

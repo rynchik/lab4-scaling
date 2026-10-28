@@ -1,0 +1,227 @@
+{
+  "M": 2000,
+  "N": 200,
+  "processes": 1,
+  "repeats": 3,
+  "warmup": 1,
+  "fixed_iters": 20,
+  "cache_setup_s": 0.0016368000069633126,
+  "rows": [
+    {
+      "method": "matvec_sendrecv",
+      "samples": [
+        0.0009008999913930893,
+        0.0009165999945253134,
+        0.0010005999356508255
+      ],
+      "median_s": 0.0009165999945253134,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "matvec_scatterv",
+      "samples": [
+        0.0009885999606922269,
+        0.0010216999799013138,
+        0.0010840999893844128
+      ],
+      "median_s": 0.0010216999799013138,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "matvec_cached",
+      "samples": [
+        0.00011969998013228178,
+        7.27999722585082e-05,
+        6.57000346109271e-05
+      ],
+      "median_s": 7.27999722585082e-05,
+      "max_relative_error": 0.0,
+      "scope": "cached_kernel"
+    },
+    {
+      "method": "dot_reduce",
+      "samples": [
+        1.8699909560382366e-05,
+        1.4599994756281376e-05,
+        1.0800082236528397e-05
+      ],
+      "median_s": 1.4599994756281376e-05,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "dot_allreduce",
+      "samples": [
+        1.7499900422990322e-05,
+        1.8099904991686344e-05,
+        1.079996582120657e-05
+      ],
+      "median_s": 1.7499900422990322e-05,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "transpose",
+      "samples": [
+        0.0009144999785348773,
+        0.000874500023201108,
+        0.0008543999865651131
+      ],
+      "median_s": 0.000874500023201108,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "batch10_baseline",
+      "samples": [
+        0.010265000048093498,
+        0.011261700070463121,
+        0.010305100004188716
+      ],
+      "median_s": 0.010305100004188716,
+      "max_relative_error": 0.0,
+      "scope": "10_matvec_batch_with_setup"
+    },
+    {
+      "method": "batch10_cached",
+      "samples": [
+        0.001475999946705997,
+        0.001433399971574545,
+        0.0013783000176772475
+      ],
+      "median_s": 0.001433399971574545,
+      "max_relative_error": 0.0,
+      "scope": "10_matvec_batch_with_setup"
+    },
+    {
+      "method": "cg_full",
+      "samples": [
+        0.002284799935296178,
+        0.0025375999975949526,
+        0.0023821000941097736
+      ],
+      "median_s": 0.0023821000941097736,
+      "max_relative_error": 7.160112579214368e-11,
+      "iterations": [
+        20,
+        20,
+        20
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "Allgatherv": 3.639981150627136e-05,
+          "Reduce_scatter": 5.330005660653114e-05,
+          "object_allreduce": 0.0001863997895270586
+        },
+        {
+          "Allgatherv": 3.8899597711861134e-05,
+          "Reduce_scatter": 6.559991743415594e-05,
+          "object_allreduce": 0.00019669998437166214
+        },
+        {
+          "Allgatherv": 3.740016836673021e-05,
+          "Reduce_scatter": 6.0900114476680756e-05,
+          "object_allreduce": 0.00019199983216822147
+        }
+      ],
+      "comm_total_samples": [
+        0.0002760996576398611,
+        0.0003011994995176792,
+        0.00029030011501163244
+      ],
+      "calls_per_solve": {
+        "Allgatherv": 20,
+        "Reduce_scatter": 20,
+        "object_allreduce": 40
+      }
+    },
+    {
+      "method": "cg_full_typed",
+      "samples": [
+        0.002481200033798814,
+        0.0023596000391989946,
+        0.002430399996228516
+      ],
+      "median_s": 0.002430399996228516,
+      "max_relative_error": 7.160112579214368e-11,
+      "iterations": [
+        20,
+        20,
+        20
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "Allgatherv": 3.7800054997205734e-05,
+          "Reduce_scatter": 7.200008258223534e-05,
+          "scalar_Allreduce": 5.279993638396263e-05
+        },
+        {
+          "Allgatherv": 3.380014095455408e-05,
+          "Reduce_scatter": 5.959998816251755e-05,
+          "scalar_Allreduce": 4.849978722631931e-05
+        },
+        {
+          "Allgatherv": 3.6800047382712364e-05,
+          "Reduce_scatter": 6.570015102624893e-05,
+          "scalar_Allreduce": 5.25002833455801e-05
+        }
+      ],
+      "comm_total_samples": [
+        0.0001626000739634037,
+        0.00014189991634339094,
+        0.0001550004817545414
+      ],
+      "calls_per_solve": {
+        "Allgatherv": 20,
+        "Reduce_scatter": 20,
+        "scalar_Allreduce": 40
+      }
+    },
+    {
+      "method": "cg_simple",
+      "samples": [
+        0.0024153999984264374,
+        0.0020431000739336014,
+        0.0020561000565066934
+      ],
+      "median_s": 0.0020561000565066934,
+      "max_relative_error": 7.160112579214368e-11,
+      "iterations": [
+        20,
+        20,
+        20
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "vector_Allreduce": 7.559999357908964e-05
+        },
+        {
+          "vector_Allreduce": 5.259981844574213e-05
+        },
+        {
+          "vector_Allreduce": 5.2299932576715946e-05
+        }
+      ],
+      "comm_total_samples": [
+        7.559999357908964e-05,
+        5.259981844574213e-05,
+        5.2299932576715946e-05
+      ],
+      "calls_per_solve": {
+        "vector_Allreduce": 20
+      }
+    }
+  ],
+  "microbench": [],
+  "mpi": "Intel(R) MPI Library 2021.18.1 for Windows* OS",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "hostnames": [
+    "chedrik"
+  ]
+}

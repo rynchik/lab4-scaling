@@ -1,0 +1,13 @@
+{
+  "profile": "local",
+  "description": "M уменьшено в 1000 раз; это не исходные кластерные наборы",
+  "processes": [1, 2, 4, 8, 16],
+  "cases": [
+    {"name": "A", "M": 20000, "N": 200, "seed": 101},
+    {"name": "B", "M": 8000, "N": 500, "seed": 102},
+    {"name": "C", "M": 2000, "N": 1000, "seed": 103}
+  ],
+  "weak": {"rows_per_rank": 2000, "N": 200, "iterations": 20, "seed": 201},
+  "repeats": 3,
+  "warmup": 1
+}

@@ -1,0 +1,6 @@
+{
+  "cpu": "12th Gen Intel(R) Core(TM) i5-12400F",
+  "physical_cores": 6,
+  "logical_processors": 12,
+  "ram_bytes": 17008058368
+}

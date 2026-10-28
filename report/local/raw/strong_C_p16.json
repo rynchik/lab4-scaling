@@ -1,0 +1,242 @@
+{
+  "M": 2000,
+  "N": 1000,
+  "processes": 16,
+  "repeats": 3,
+  "warmup": 1,
+  "fixed_iters": null,
+  "cache_setup_s": 0.007768699899315834,
+  "rows": [
+    {
+      "method": "matvec_sendrecv",
+      "samples": [
+        0.0028216999489814043,
+        0.0028626000275835395,
+        0.00280030001886189
+      ],
+      "median_s": 0.0028216999489814043,
+      "max_relative_error": 2.5049560469503597e-17,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "matvec_scatterv",
+      "samples": [
+        0.0037045999197289348,
+        0.0037368000485002995,
+        0.003592599998228252
+      ],
+      "median_s": 0.0037045999197289348,
+      "max_relative_error": 2.5049560469503597e-17,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "matvec_cached",
+      "samples": [
+        0.0006020000437274575,
+        0.0005638999864459038,
+        0.00044109998270869255
+      ],
+      "median_s": 0.0005638999864459038,
+      "max_relative_error": 2.5049560469503597e-17,
+      "scope": "cached_kernel"
+    },
+    {
+      "method": "dot_reduce",
+      "samples": [
+        0.00020619994029402733,
+        0.0001626000739634037,
+        0.00016920000780373812
+      ],
+      "median_s": 0.00016920000780373812,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "dot_allreduce",
+      "samples": [
+        0.0001895000459626317,
+        0.00021930004004389048,
+        0.00018560001626610756
+      ],
+      "median_s": 0.0001895000459626317,
+      "max_relative_error": 0.0,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "transpose",
+      "samples": [
+        0.0029326999792829156,
+        0.0028522999491542578,
+        0.003082999959588051
+      ],
+      "median_s": 0.0029326999792829156,
+      "max_relative_error": 6.916080623727359e-16,
+      "scope": "distribution_compute_gather"
+    },
+    {
+      "method": "batch10_baseline",
+      "samples": [
+        0.03422200004570186,
+        0.032477700035087764,
+        0.03249720006715506
+      ],
+      "median_s": 0.03249720006715506,
+      "max_relative_error": 2.5049560469503597e-17,
+      "scope": "10_matvec_batch_with_setup"
+    },
+    {
+      "method": "batch10_cached",
+      "samples": [
+        0.005244300002232194,
+        0.006500700023025274,
+        0.00648199999704957
+      ],
+      "median_s": 0.00648199999704957,
+      "max_relative_error": 2.5049560469503597e-17,
+      "scope": "10_matvec_batch_with_setup"
+    },
+    {
+      "method": "cg_full",
+      "samples": [
+        0.042890400043688715,
+        0.04989249992650002,
+        0.050213399925269186
+      ],
+      "median_s": 0.04989249992650002,
+      "max_relative_error": 3.037674096203372e-09,
+      "iterations": [
+        55,
+        55,
+        55
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "Allgatherv": 0.01383430021815002,
+          "Reduce_scatter": 0.012859000125899911,
+          "object_allreduce": 0.019493599887937307
+        },
+        {
+          "Allgatherv": 0.014150000060908496,
+          "Reduce_scatter": 0.01676420052535832,
+          "object_allreduce": 0.021568999742157757
+        },
+        {
+          "Allgatherv": 0.015542500303126872,
+          "Reduce_scatter": 0.016243600053712726,
+          "object_allreduce": 0.022755999816581607
+        }
+      ],
+      "comm_total_samples": [
+        0.03580040065571666,
+        0.041931300424039364,
+        0.04237180051859468
+      ],
+      "calls_per_solve": {
+        "Allgatherv": 55,
+        "Reduce_scatter": 55,
+        "object_allreduce": 110
+      }
+    },
+    {
+      "method": "cg_full_typed",
+      "samples": [
+        0.04108390002511442,
+        0.03786699997726828,
+        0.03777479997370392
+      ],
+      "median_s": 0.03786699997726828,
+      "max_relative_error": 3.037674096203372e-09,
+      "iterations": [
+        55,
+        55,
+        55
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "Allgatherv": 0.015758300200104713,
+          "Reduce_scatter": 0.01609070017002523,
+          "scalar_Allreduce": 0.01261680037714541
+        },
+        {
+          "Allgatherv": 0.012587799690663815,
+          "Reduce_scatter": 0.014403499779291451,
+          "scalar_Allreduce": 0.01114039949607104
+        },
+        {
+          "Allgatherv": 0.009716499713249505,
+          "Reduce_scatter": 0.013933000504039228,
+          "scalar_Allreduce": 0.010765700251795352
+        }
+      ],
+      "comm_total_samples": [
+        0.03477440041024238,
+        0.031295100576244295,
+        0.03071619919501245
+      ],
+      "calls_per_solve": {
+        "Allgatherv": 55,
+        "Reduce_scatter": 55,
+        "scalar_Allreduce": 110
+      }
+    },
+    {
+      "method": "cg_simple",
+      "samples": [
+        0.02125660004094243,
+        0.026656399946659803,
+        0.021997899981215596
+      ],
+      "median_s": 0.021997899981215596,
+      "max_relative_error": 3.037674213453227e-09,
+      "iterations": [
+        55,
+        55,
+        55
+      ],
+      "scope": "cg_loop",
+      "phase_samples": [
+        {
+          "vector_Allreduce": 0.014849899802356958
+        },
+        {
+          "vector_Allreduce": 0.02021649992093444
+        },
+        {
+          "vector_Allreduce": 0.015476200263947248
+        }
+      ],
+      "comm_total_samples": [
+        0.014849899802356958,
+        0.02021649992093444,
+        0.015476200263947248
+      ],
+      "calls_per_solve": {
+        "vector_Allreduce": 55
+      }
+    }
+  ],
+  "microbench": [],
+  "mpi": "Intel(R) MPI Library 2021.18.1 for Windows* OS",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "hostnames": [
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik",
+    "chedrik"
+  ]
+}

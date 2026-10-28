@@ -1,0 +1,14 @@
+{
+  "profile": "cluster",
+  "description": "Исходные размеры задания; измерения требуют кластера",
+  "processes": [1, 2, 4, 8, 16, 32, 64],
+  "cases": [
+    {"name": "A", "M": 20000000, "N": 200, "seed": 101},
+    {"name": "B", "M": 8000000, "N": 500, "seed": 102},
+    {"name": "C", "M": 2000000, "N": 1000, "seed": 103}
+  ],
+  "weak": {"rows_per_rank": 200000, "N": 200, "iterations": 20, "seed": 201},
+  "weak_processes": [1, 2, 4, 8, 16],
+  "repeats": 5,
+  "warmup": 1
+}

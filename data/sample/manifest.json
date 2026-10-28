@@ -1,0 +1,8 @@
+{
+  "M": 7,
+  "N": 5,
+  "seed": 42,
+  "dtype": "float64",
+  "matrix_bytes": 280,
+  "chunk_bytes": 80
+}
